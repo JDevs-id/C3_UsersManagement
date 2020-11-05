@@ -23,14 +23,29 @@ class Crud extends CI_Controller
         } else {
             $this->Users_model->addUser();
             $this->session->set_flashdata('flash', 'added');
-            redirect('/');
+            redirect('/pages');
         }
+    }
+
+    public function disable($id)
+    {
+        $this->Users_model->disableUser($id);
+        $this->session->set_flashdata('flash', 'disabled');
+        redirect('pages');
+    }
+
+
+    public function enable($id)
+    {
+        $this->Users_model->enableUser($id);
+        $this->session->set_flashdata('flash', 'enabled');
+        redirect('pages');
     }
 
     public function delete($id)
     {
         $this->Users_model->deleteData($id);
         $this->session->set_flashdata('flash', 'deleted');
-        redirect('/');
+        redirect('pages');
     }
 }

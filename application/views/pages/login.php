@@ -9,7 +9,7 @@
     <title>Users Management</title>
 </head>
 
-<body class="primaryColor">
+<body>
     <div class="wrapper fadeInDown">
         <div id="formContent">
             <!-- Tabs Titles -->
@@ -21,10 +21,16 @@
                 <img class="img" src="<?= base_url(); ?>assets/img/logo.png" id="icon" alt="User Icon" />
             </div>
             <hr>
+            <div><?= $this->session->flashdata('message'); ?></div>
             <!-- Login Form -->
-            <form>
-                <input type="text" id="name" class="fadeIn second" name="name" placeholder="Username admin">
-                <input type="password" id="password" class="fadeIn third" name="password" placeholder="Password">
+            <form action="<?= base_url(); ?>login/" method="POST">
+                <div>
+                    <input type="text" id="username" class="form-control fadeIn second " name="username" placeholder="Username admin" value="<?= set_value('username'); ?>">
+                    <br><?= form_error('username', '<small class="text-danger pl-1">', '</small>'); ?></div>
+                <div>
+                    <input type="password" id="password" class="form-control fadeIn third" name="password" placeholder="Password">
+                    <br><?= form_error('password', '<small class="text-danger pl-1">', '</small>'); ?>
+                </div>
                 <hr>
                 <input type="submit" class="fadeIn fourth" value="Log In">
             </form>

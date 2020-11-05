@@ -8,6 +8,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" type="image/png" href="<?= base_url(); ?>assets/img/logo.png">
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets/css/style.css">
 </head>
 
@@ -22,15 +23,16 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="<?= base_url(); ?>">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="<?= base_url(); ?>pages">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url(); ?>pages/about/">About</a>
+                        <a class="nav-link" href="<?= base_url(); ?>pages/about">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url(); ?>pages/contact/">Contact</a>
+                        <a class="nav-link" href="<?= base_url(); ?>pages/contact">Contact</a>
                     </li>
                 </ul>
+                <a href="<?= base_url(); ?>" class="button-invert" onclick="return confirm('Are you sure want to logout?');">Log Out</a>
             </div>
         </nav>
     </header>
