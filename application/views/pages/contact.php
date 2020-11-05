@@ -70,7 +70,7 @@
                             </form>
 
                             <div class="text-center text-md-left">
-                                <a class="btn btn-primary" style="color: white;" onclick="document.getElementById('contact-form').submit();">Send</a>
+                                <a class="button" style="color: white;" onclick="document.getElementById('contact-form').submit();">Send</a>
                             </div>
                             <div class="status"></div>
                         </div>

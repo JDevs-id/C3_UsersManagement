@@ -11,8 +11,6 @@ class Login extends CI_Controller
     public function index()
     {
         $data['users'] = $this->Users_model->getAllUsers();
-        $this->load->view('layout/header');
-        $this->load->view('pages/home', $data);
-        $this->load->view('layout/footer');
+        $this->load->view('pages/login', $data);
     }
 }

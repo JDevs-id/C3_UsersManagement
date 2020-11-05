@@ -31,7 +31,7 @@
                                 <input type="password" name="repeatPassword" class="form-control" id="repeatPassword" placeholder="Repeat password">
                             </div>
                         </div>
-                        <button type="submit" name="add" class="btn btn-primary">Save Data</button>
+                        <button type="submit" name="add" class="button">Save Data</button>
                     </form>
                 </div>
             </div>

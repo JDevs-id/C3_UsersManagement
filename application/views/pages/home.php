@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="row mt-3 mb-3">
 		<div class="col-md-6">
-			<a href="<?= base_url(); ?>crud/" class="btn btn-primary">Add Users</a>
+			<a href="<?= base_url(); ?>crud/" class="button">Add Users</a>
 		</div>
 	</div>
 	<?php if ($this->session->flashdata('flash')) : ?>
@@ -37,9 +37,9 @@
 								<td><?= $d['username']; ?></td>
 								<td><?= $d['status']; ?></td>
 								<td>
-									<div class="action">
-										<a href="">Edit</a>
-										<a href="<?= base_url(); ?>crud/delete/<?= $d['id']; ?>" onclick="return confirm('Are you sure?');">Delete</a>
+									<div>
+										<a class="edit" href="<?= base_url(); ?>crud/edit/<?= $d['id']; ?>">Edit</a>
+										<a class="delete" href="<?= base_url(); ?>crud/delete/<?= $d['id']; ?>" onclick="return confirm('Are you sure?');">Delete</a>
 									</div>
 								</td>
 							</tr>
