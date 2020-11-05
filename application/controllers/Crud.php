@@ -9,6 +9,7 @@ class Crud extends CI_Controller
         $this->load->model('Users_model');
         $this->load->library('form_validation');
     }
+
     public function index()
     {
         $title['title'] = 'Add Data';
@@ -21,8 +22,15 @@ class Crud extends CI_Controller
             $this->load->view('layout/footer');
         } else {
             $this->Users_model->addUser();
+            $this->session->set_flashdata('flash', 'added');
             redirect('/');
-            echo "<script>alert('same message');</script>";
         }
+    }
+
+    public function delete($id)
+    {
+        $this->Users_model->deleteData($id);
+        $this->session->set_flashdata('flash', 'deleted');
+        redirect('/');
     }
 }
