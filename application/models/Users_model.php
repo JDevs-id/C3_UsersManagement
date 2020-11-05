@@ -6,6 +6,12 @@ class Users_model extends CI_Model
         return $this->db->get('tb_users')->result_array();
     }
 
+
+    public function getAdmin()
+    {
+        return $this->db->get('tb_admin')->result_array();
+    }
+
     public function addUser()
     {
         $data = array(

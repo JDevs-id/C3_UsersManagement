@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="row mt-3 mb-3">
 		<div class="col-md-6">
-			<a href="<?= base_url(); ?>crud/" class="button">Add Users</a>
+			<a href="<?= base_url(); ?>crud/" class="button">Add User</a>
 		</div>
 	</div>
 	<?php if ($this->session->flashdata('flash')) : ?>

@@ -32,7 +32,10 @@
                         <a class="nav-link" href="<?= base_url(); ?>pages/contact">Contact</a>
                     </li>
                 </ul>
-                <a href="<?= base_url(); ?>" class="button-invert" onclick="return confirm('Are you sure want to logout?');">Log Out</a>
+                <div>
+                    <a href="<?= base_url(); ?>crud/setting"><input type="image" style="height: 4%; width: 4%; vertical-align: middle; float: right; margin-left: 10px;" src="<?= base_url(); ?>assets/img/setting.png"></a>
+                    <a href="<?= base_url(); ?>login/logout/<?= $admin['id']; ?>" class="button-invert" onclick="return confirm('Are you sure want to logout?');">Log Out</a>
+                </div>
             </div>
         </nav>
     </header>

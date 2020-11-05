@@ -13,25 +13,25 @@
                     <?php endif; ?>
                     <form action="" method="POST">
                         <div class="form-group">
-                            <label for="inputUsername">Username</label>
-                            <input type="text" name="inputUsername" class="form-control" id="inputUsername" aria-describedby="usernamedHelpBlock" placeholder="Input username">
+                            <label for="inputUsername">New Username</label>
+                            <input type="text" name="newUsername" class="form-control" id="newUsername" aria-describedby="usernamedHelpBlock" placeholder="Input new admin username">
                             <small id="usernameHelpBlock" class="form-text text-muted">
                                 Username must be 3-20 characters long.
                             </small>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                <label for="inputPassword4">Password</label>
-                                <input type="password" name="inputPassword" class="form-control" id="inputPassword" aria-describedby="passwordHelpBlock" placeholder="Input password">
+                                <label for="inputPassword4">Current Password</label>
+                                <input type="password" name="currentPassword" class="form-control" id="currentPassword" aria-describedby="passwordHelpBlock" placeholder="Input current password">
                                 <small id="passwordHelpBlock" class="form-text text-muted">
                                     Password must be 8-20 characters long.
                                 </small></div>
                             <div class="form-group col-md-6">
-                                <label for="inputPassword4">Repeat Password</label>
-                                <input type="password" name="repeatPassword" class="form-control" id="repeatPassword" placeholder="Repeat password">
+                                <label for="inputPassword4">New Password</label>
+                                <input type="password" name="newPassword" class="form-control" id="newPassword" placeholder="input new password">
                             </div>
                         </div>
-                        <button type="submit" name="add" class="button">Save Data</button>
+                        <button type="submit" name="add" class="button" onclick="return confirm('Are you sure want to update user admin?');">Update admin user</button>
                     </form>
                 </div>
             </div>
