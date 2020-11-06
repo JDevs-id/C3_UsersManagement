@@ -33,15 +33,24 @@ class Pages extends CI_Controller
 		];
 
 		$this->load->view('layout/header', $data);
-		$this->load->view('pages/about', $data);
+		$this->load->view('pages/about');
 		$this->load->view('layout/footer');
 	}
 
 	public function contact()
 	{
+		$this->load->library('googlemaps');
+		$config['center'] = '-6.938711, 109.606203';
+		$config['zoom'] = 'auto';
+		$this->googlemaps->initialize($config);
+		$marker = array();
+		$marker['position'] = '-6.938711, 109.606203';
+		$this->googlemaps->add_marker($marker);
+
 		$data = [
 			'title' => 'Contact us',
-			'admin' => $this->dataAdmin
+			'admin' => $this->dataAdmin,
+			'map' => $this->googlemaps->create_map(),
 		];
 		$this->load->view('layout/header', $data);
 		$this->load->view('pages/contact');
