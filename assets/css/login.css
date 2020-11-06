@@ -17,14 +17,19 @@ a {
 	font-weight: 400;
 }
 
+a:hover {
+	color: #034133;
+	text-decoration: none;
+}
+
 h2 {
+	color: #0a3458;
 	text-align: center;
 	font-size: 16px;
 	font-weight: 600;
 	text-transform: uppercase;
 	display: inline-block;
 	margin: 40px 8px 10px 8px;
-	color: #cccccc;
 }
 
 /* STRUCTURE */
@@ -141,7 +146,7 @@ input[type="number"] {
 input[type="text"]:focus,
 input[type="password"]:focus {
 	background-color: #fff;
-	border-bottom: 2px solid #002b22;
+	border-bottom: 2px solid #034133;
 }
 
 input[type="text"]:placeholder,

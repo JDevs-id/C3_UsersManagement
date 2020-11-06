@@ -55,4 +55,17 @@ class Users_model extends CI_Model
         $this->db->where('id', $id);
         $this->db->delete('tb_users');
     }
+
+    public function resetAdmin()
+    {
+        $data = array(
+            'username' => 'admin',
+            'password' => 'admin',
+            'sessions' => 0,
+            'reset_code' => 'reset'
+        );
+
+        $this->db->where('id', 1);
+        $this->db->update('tb_admin', $data);
+    }
 }

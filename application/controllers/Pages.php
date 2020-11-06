@@ -8,6 +8,7 @@ class Pages extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('Users_model');
+		$this->load->library('form_validation');
 		$this->dataAdmin = $this->db->get_where('tb_admin', ['id' => $this->session->userdata('id')])->row_array();
 	}
 	public function index()
@@ -45,5 +46,13 @@ class Pages extends CI_Controller
 		$this->load->view('layout/header', $data);
 		$this->load->view('pages/contact');
 		$this->load->view('layout/footer');
+	}
+
+	public function reset()
+	{
+		$data = [
+			'title' => "Reset admin user",
+		];
+		$this->load->view('pages/crud/reset', $data);
 	}
 }

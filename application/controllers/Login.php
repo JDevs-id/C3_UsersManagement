@@ -13,6 +13,9 @@ class Login extends CI_Controller
 
     public function index()
     {
+        $data = [
+            'title' => "Users Management",
+        ];
         $dataAdmin = $this->Users_model->getAdmin();
         $session = $this->session->userdata('localSession');
         if ($dataAdmin['0']['sessions'] == $session) {
@@ -21,7 +24,7 @@ class Login extends CI_Controller
             $this->form_validation->set_rules('username', 'Username', 'trim|required');
             $this->form_validation->set_rules('password', 'Password', 'trim|required');
             if ($this->form_validation->run() == false) {
-                $this->load->view('pages/login');
+                $this->load->view('pages/login', $data);
             } else {
                 $this->_login();
             }

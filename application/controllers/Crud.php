@@ -76,4 +76,22 @@ class Crud extends CI_Controller
             redirect('login');
         }
     }
+
+    public function reset()
+    {
+        $data = [
+            'title' => "Reset admin user",
+        ];
+        $dataAdmin = $this->Users_model->getAdmin();
+
+        $this->form_validation->set_rules('resetCode', 'reset code', 'trim|required');
+        if ($this->form_validation->run() == TRUE && set_value('resetCode') == $dataAdmin['0']['reset_code']) {
+            $this->Users_model->resetAdmin();
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Admin user reseted');
+            redirect('login');
+        } else {
+            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Wrong reset code!');
+            $this->load->view('pages/crud/reset', $data);
+        }
+    }
 }

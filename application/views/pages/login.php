@@ -6,7 +6,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="shortcut icon" type="image/png" href="<?= base_url(); ?>assets/img/logo.png">
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets/css/login.css">
-    <title>Users Management</title>
+    <title><?= $title; ?></title>
 </head>
 
 <body>
@@ -14,7 +14,7 @@
         <div id="formContent">
             <!-- Tabs Titles -->
             <div class="fadeIn first">
-                <h2>Users Management</h2>
+                <h2 style="color: #034133;"><?= $title; ?></h2>
             </div>
             <!-- Icon -->
             <div class="fadeIn first">
@@ -32,9 +32,11 @@
                     <br><?= form_error('password', '<small class="text-danger pl-1">', '</small>'); ?>
                 </div>
                 <hr>
-                <input type="submit" class="fadeIn fourth" value="Log In">
+                <div>
+                    <input type="submit" class="fadeIn fourth" value="Log In">
+                    <a style="text-decoration: none;" href="<?= base_url(); ?>pages/reset">forgot username & password?</a>
+                </div>
             </form>
-
         </div>
     </div>
 </body>
