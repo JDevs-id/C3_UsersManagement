@@ -14,7 +14,8 @@ class Login extends CI_Controller
     public function index()
     {
         $dataAdmin = $this->Users_model->getAdmin();
-        if ($dataAdmin['0']['sessions'] == 1) {
+        $session = $this->session->userdata('localSession');
+        if ($dataAdmin['0']['sessions'] == $session) {
             redirect('pages');
         } else {
             $this->form_validation->set_rules('username', 'Username', 'trim|required');
@@ -39,7 +40,10 @@ class Login extends CI_Controller
                     $id = $user['id'];
                     $this->Login_model->login($id);
 
-                    $dataAdmin = ['id' => $user['id']];
+                    $dataAdmin = [
+                        'id' => $user['id'],
+                        'localSession' => 1
+                    ];
                     $this->session->set_userdata($dataAdmin);
 
                     redirect('pages');
@@ -59,6 +63,8 @@ class Login extends CI_Controller
 
     public function logout($id)
     {
+        $this->session->unset_userdata('id');
+        $this->session->unset_userdata('localSession');
         $this->Login_model->logout($id);
         redirect('login');
     }
