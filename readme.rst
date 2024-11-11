@@ -1,5 +1,4 @@
-## Introduction
-This project is a simple user management system using CodeIgniter 3 that has integration with Flutter Mobile ChatApp as the main app.
+## Introduction : This project is a simple user management system using CodeIgniter 3 that has integration with Flutter Mobile ChatApp as the main app.
 
 ###################
 What is CodeIgniter
